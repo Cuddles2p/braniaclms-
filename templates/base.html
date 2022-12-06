@@ -19,7 +19,12 @@
 
     <link type="image/x-icon" href="/static/favicon.ico" rel="shortcut icon">
 
-    <title>Welcome to Braniac!</title>
+  <title>
+    {% block title %}
+    Welcome to Braniac!
+    {% endblock title %}
+  </title>
+
 </head>
 
 <body>
@@ -43,7 +48,7 @@
                 </p>
                 <p>
                 <ul class="list-unstyled">
-                    <li><a href="{% url 'mainapp:index' %}">Домашняя</a></li>
+                    <li><a href="{% url 'mainapp:main_page' %}">Домашняя</a></li>
                     <li><a href="{% url 'mainapp:news' %}">Новости</a></li>
                     <li><a href="{% url 'mainapp:login' %}">Войти</a></li>
                 </ul>

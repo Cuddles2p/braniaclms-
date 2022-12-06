@@ -2,8 +2,12 @@ __all__ = ['Courses']
 
 from django.db import models
 
+from mainapp.models.managers import CoursesManager
+
 
 class Courses(models.Model):
+    objects = CoursesManager()
+
     name = models.CharField(max_length=256, verbose_name="Name")
     description = models.TextField(
         verbose_name="Description", blank=True, null=True
@@ -20,10 +24,10 @@ class Courses(models.Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name="Created")
     updated = models.DateTimeField(auto_now=True, verbose_name="Edited")
     deleted = models.BooleanField(default=False)
-
     def __str__(self) -> str:
         return f"{self.pk} {self.name}"
 
     def delete(self, *args):
         self.deleted = True
         self.save()
+
