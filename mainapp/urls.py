@@ -1,6 +1,9 @@
 from django.urls import path
 from mainapp import views
 from mainapp.apps import MainappConfig
+from django.conf.urls.static import static
+from django.conf import settings
+
 app_name = MainappConfig.name
 urlpatterns = [
     path("", views.MainPageView.as_view(), name="main_page"),
