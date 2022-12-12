@@ -1,11 +1,10 @@
-_all__ = ['NewsPageDetailView']
-from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView
+__all__ = ['NewsDetailView']
+from django.views.generic import DetailView
 from mainapp.models import News
 
 
-class NewsPageDetailView(TemplateView):
-    template_name = "mainapp/news/news_detail.html"
+class NewsDetailView(DetailView):
+    model = News
 
     def get_context_data(self, pk=None, **kwargs):
         context = super().get_context_data(pk=pk, **kwargs)

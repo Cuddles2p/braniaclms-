@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "markdownify.apps.MarkdownifyConfig",
     "django_extensions",
     "social_django",
+    "crispy_forms", # pip install django-crispy-forms
 
     "mainapp",
     "authapp",
@@ -150,7 +151,6 @@ AUTHENTICATION_BACKENDS = (
     "social_core.backends.github.GithubOAuth2",
     'social_core.backends.vk.VKOAuth2',
     "django.contrib.auth.backends.ModelBackend",
-    "social_core.backends.mailru.MRGOAuth2",
 )
 
 SOCIAL_AUTH_GITHUB_KEY = "c9ec0cf4778bc1535f4c"
@@ -159,6 +159,8 @@ SOCIAL_AUTH_GITHUB_SECRET = "cae481533ab73098c4bb11fbe73a46c847dfaa32"
 SOCIAL_AUTH_VK_OAUTH2_KEY = '8112501'# ID приложения
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'qNOrYzVRAoxq0uKqrd1r' # Защищённый ключ
 SOCIAL_AUTH_VK_OAUTH2_API_VERSION = '5.131'
+
+CRISPY_TEMPLATE_PACK = "bootstrap4" # https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
