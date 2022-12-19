@@ -6,6 +6,7 @@ from mainapp.models import Courses
 class CoursesListView(TemplateView):
     template_name = "mainapp/courses/courses_list.html"
 
+
     def get_context_data(self, **kwargs):
         context = super(CoursesListView, self).get_context_data(**kwargs)
         context["objects"] = Courses.objects.all()

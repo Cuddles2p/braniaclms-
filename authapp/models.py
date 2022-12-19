@@ -18,7 +18,7 @@ def users_avatars_path(instance, filename):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = "email"
     username_validator = ASCIIUsernameValidator()
 
     username = models.CharField(
@@ -66,6 +66,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
 
+
     class Meta:
         verbose_name = _("user")
         verbose_name_plural = _("users")
@@ -88,4 +89,3 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
-
